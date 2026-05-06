@@ -1,26 +1,52 @@
 ---
+const skills = [
+  'Achtsamkeit',
+  'Selbstfürsorge',
+  'Ambiguitätstoleranz',
+  'Courage',
+  'Verkörperung',
+  'Resonanzfähigkeit',
+  'Sinnorientierung',
+];
 ---
 
 <section class="py-24 lg:py-32 bg-slate-50/50">
   <div class="max-w-5xl mx-auto px-6 lg:px-8">
-    <div class="max-w-3xl mx-auto text-center">
-      <span class="inline-block px-4 py-2 bg-brand-navy/5 text-brand-navy text-sm font-medium rounded-full mb-6 animate-on-scroll">
-        Über das Buch
-      </span>
-      <h2 class="text-3xl sm:text-4xl font-bold mb-8 animate-on-scroll">
-        Was macht uns handlungsfähig<br />in einer unsicheren Welt?
-      </h2>
-      <div class="space-y-4 text-slate-600 leading-relaxed text-left animate-on-scroll">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-10">
+        <span class="inline-block px-4 py-2 bg-brand-navy/5 text-brand-navy text-sm font-medium rounded-full mb-6 animate-on-scroll">
+          Über das Buch
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-bold mb-8 animate-on-scroll">
+          7 Wege zu einem produktiven Umgang<br class="hidden sm:block" /> mit Spannungen und Krisen
+        </h2>
+      </div>
+
+      <div class="space-y-5 text-slate-600 leading-relaxed animate-on-scroll">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Unsere Welt ist von Dauerkrisen geprägt, die Unsicherheit und Zukunftsangst auslösen. Modelle wie VUCA (äußere Unübersichtlichkeit) und BANI (innere Grundanspannung) beschreiben diesen Zustand treffend: Resilienz im Sinne von „Zurückfedern" stabilisiert, reicht aber nicht mehr aus, um Zukunftsfähigkeit zu entwickeln.
         </p>
         <p>
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-        <p>
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+          Diese entsteht aus trainierbaren Kompetenzen: Gegensätze aushalten, Ungewissheit annehmen, Spannungen in Handlung überführen.
         </p>
       </div>
+
+      <!-- Die 7 Skills -->
+      <div class="mt-10 animate-on-scroll">
+        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-5">Die 7 Future Skills</p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+          {skills.map((skill) => (
+            <div class="flex items-center gap-2 px-4 py-3 bg-white border border-slate-200/60 rounded-xl text-sm font-medium text-brand-navy">
+              <span class="w-1.5 h-1.5 bg-brand-blue rounded-full flex-shrink-0"></span>
+              {skill}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <p class="mt-10 text-slate-600 leading-relaxed animate-on-scroll italic border-l-2 border-brand-blue/40 pl-5">
+        „Ein kluger, inspirierender Kompass für alle, die nicht auf einfache Antworten hoffen, sondern bereit sind, Spannungen als Quelle von Handlungsfähigkeit und Sinn zu entdecken."
+      </p>
     </div>
   </div>
 </section>
