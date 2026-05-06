@@ -1,0 +1,48 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = 'Future Skills – 7 Schlüsselkompetenzen für mehr Klarheit, Gelassenheit und Handlungsfähigkeit in unsicheren Zeiten. Ein Buch von Niko Kohls.',
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, 'https://future-skills.bridge-brain.ai');
+---
+
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0a1628" />
+
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL.href} />
+    <meta property="og:image" content="https://future-skills.bridge-brain.ai/cover.webp" />
+
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen flex flex-col bg-white">
+    <slot />
+
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) entry.target.classList.add('visible');
+          });
+        },
+        { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+      );
+      document.querySelectorAll('.animate-on-scroll').forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>
